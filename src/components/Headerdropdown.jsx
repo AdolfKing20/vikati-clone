@@ -1,22 +1,14 @@
-"use client"
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
 import logo from "../images/logo-vikati-300x81.webp";
-
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
+import Image from "next/image";
+function Header() {
   return (
     <>
-      <header className=''>
+      <header>
         <nav className="flex justify-between px-4 items-center py-2">
           <div>
-            <button className="border-none " onClick={toggleDropdown}>
+            <button className="border-none ">
               <svg
                 class="icon icon-tabler icon-tabler-menu-2 "
                 width="40"
@@ -35,22 +27,9 @@ export default function Header() {
               </svg>
             </button>
 
-            {isOpen && (
-              <aside className=' fixed w-64 left-0 h-full bg-slate-500 z-[-1]'>
-                <ul>
-                  <li className='font-semibold text-2xl uppercase flex items-center'>
-                      <Link href={""}>Inicio</Link>
-                      <button>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-selector" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M8 9l4 -4l4 4" />
-  <path d="M16 15l-4 4l-4 -4" />
-</svg>
-                      </button>
-                  </li>
-                </ul>
-              </aside>
-            )}
+            <ul>
+              <li></li>
+            </ul>
           </div>
 
           <Image
@@ -84,3 +63,5 @@ export default function Header() {
     </>
   );
 }
+
+export default Header;
